@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/knockout-3.4.2.js"></script>
+		<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="js/datepicker.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/datepicker.css">
+		<link rel="stylesheet" href="css/styles.css">
 	</head>
 	<body>
-		<p>here's some html!</p>
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<div class="col col-md-6">
+
+				</div>
+				<div class="col col-md-6">
+					<h3>Create New Feature Request</h3>
+					<form data-bind="submit: submitFeatureRequest">
+						<p>Title: <input data-bind="value: title"/></p>
+						<p>Description: </br><textarea data-bind="value: description"></textarea></p>
+						<p>Client: <select data-bind="options: $root.clients, optionsText: 'clientName'"></select></p>
+						<p>Client Priority: <input data-bind="value: priority"/></p>
+						<p>Target Date: <input data-toggle="datepicker" data-bind="value: date"/></p>
+						<p>Product Area: <select data-bind="options: $root.areas, optionsText: 'areaName'"></select></p>
+						<input type="submit" value="Submit Feature Request"/>
+					</form>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
