@@ -14,9 +14,10 @@
 	<body>
 		<div class="container">
 			<div class="row justify-content-md-center">
-				<div class="col col-md-6">
-					<table>
-						<thead>
+				<div class="col col-sm-12 col-md-12 col-lg-12 col-xl-6">
+					<h3>Existing Feature Requests</h3>
+					<table id="requests" class="table table-striped">
+						<thead class="thead-light">
 							<tr>
 								<th>Title</th>
 								<th>Description</th>
@@ -38,16 +39,48 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col col-md-6">
+				<div class="col col-sm-12 col-md-12 col-lg-12 col-xl-6">
 					<h3>Create New Feature Request</h3>
 					<form data-bind="submit: submitFeatureRequest">
-						<p>Title: <input data-bind="value: title"/></p>
-						<p>Description: </br><textarea data-bind="value: description"></textarea></p>
-						<p>Client: <select data-bind="options: $root.clients, value: selectedClient, optionsText: 'clientName'"></select></p>
-						<p>Client Priority: <input data-bind="value: priority"/></p>
-						<p>Target Date: <input data-toggle="datepicker" data-bind="value: date"/></p>
-						<p>Product Area: <select data-bind="options: $root.areas, value: selectedArea, optionsText: 'areaName'"></select></p>
-						<input type="submit" value="Submit Feature Request"/>
+						<div class="form-group">
+							<p>
+								Title: 
+								<input class="form-control" data-bind="value: title"/>
+							</p>
+						</div>
+						<div class="form-group">
+							<p>
+								Description: </br>
+								<textarea class="form-control" data-bind="value: description"></textarea>
+							</p>
+						</div>
+						<div class="form-group">
+							<p>
+								Client: 
+								<select class="form-control" data-bind="options: $root.clients, 
+									value: selectedClient, optionsText: 'clientName'"></select>
+							</p>
+						</div>
+						<div class="form-group">
+							<p>
+								Client Priority: 
+								<input class="form-control" data-bind="value: priority"/>
+							</p>
+						</div>
+						<div class="form-group">
+							<p>
+								Target Date: 
+								<input class="form-control" data-toggle="datepicker" data-bind="value: date"/>
+							</p>
+						</div>
+						<div class="form-group">
+							<p>
+								Product Area: 
+								<select class="form-control" data-bind="options: $root.areas, 
+									value: selectedArea, optionsText: 'areaName'"></select>
+							</p>
+						</div>
+						<input class="btn btn-primary" type="submit" value="Submit Feature Request"/>
 					</form>
 				</div>
 			</div>

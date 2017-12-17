@@ -33,7 +33,6 @@ def requests():
 			# bump each priority up by one
 			for to_change in requests_to_change:
 				to_change.client_priority += 1
-				# save 
 
 		db.session.add(featRequest)
 		db.session.commit()
@@ -49,7 +48,7 @@ def requests():
 				description=feature_request.description,
 				client_name=feature_request.client_name,
 				client_priority=feature_request.client_priority,
-				target_date=feature_request.target_date,
+				target_date=feature_request.target_date.strftime("%m/%d/%Y"),
 				area_name=feature_request.area_name,
 			)
 			result.append(request_dict)
