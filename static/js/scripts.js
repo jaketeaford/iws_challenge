@@ -44,7 +44,16 @@ $(document).ready(function(){
 			});
 		}
 
-		self.refreshExistingFeatureRequests = function(){}
+		self.refreshExistingFeatureRequests = function(){
+			var appVM = this;
+			$.ajax({
+				url: "/requests",
+				type: "GET",
+				success: this.existingRequests
+			});
+		}
+
+		self.refreshExistingFeatureRequests();
  	}
 	
 	$('[data-toggle="datepicker"]').datepicker();

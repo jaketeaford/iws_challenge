@@ -15,7 +15,28 @@
 		<div class="container">
 			<div class="row justify-content-md-center">
 				<div class="col col-md-6">
-
+					<table>
+						<thead>
+							<tr>
+								<th>Title</th>
+								<th>Description</th>
+								<th>Client</th>
+								<th>Priority</th>
+								<th>Target Date</th>
+								<th>Product Area</th>
+							</tr>
+						</thead>
+						<tbody data-bind="foreach: existingRequests">
+							<tr>
+								<td data-bind="text: title"></td>
+								<td data-bind="text: description"></td>
+								<td data-bind="text: client_name"></td>
+								<td data-bind="text: client_priority"></td>
+								<td data-bind="text: target_date"></td>
+								<td data-bind="text: area_name"></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 				<div class="col col-md-6">
 					<h3>Create New Feature Request</h3>
