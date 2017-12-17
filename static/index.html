@@ -22,10 +22,10 @@
 					<form data-bind="submit: submitFeatureRequest">
 						<p>Title: <input data-bind="value: title"/></p>
 						<p>Description: </br><textarea data-bind="value: description"></textarea></p>
-						<p>Client: <select data-bind="options: $root.clients, optionsText: 'clientName'"></select></p>
+						<p>Client: <select data-bind="options: $root.clients, value: selectedClient, optionsText: 'clientName'"></select></p>
 						<p>Client Priority: <input data-bind="value: priority"/></p>
 						<p>Target Date: <input data-toggle="datepicker" data-bind="value: date"/></p>
-						<p>Product Area: <select data-bind="options: $root.areas, optionsText: 'areaName'"></select></p>
+						<p>Product Area: <select data-bind="options: $root.areas, value: selectedArea, optionsText: 'areaName'"></select></p>
 						<input type="submit" value="Submit Feature Request"/>
 					</form>
 				</div>
