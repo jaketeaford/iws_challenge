@@ -3,8 +3,6 @@ from database import app, db, FeatureRequest
 from dateutil.parser import parse
 import json
 
-#mysql root pw is 07g1fM*DC834
-
 @app.route("/index")
 def index():
 	return app.send_static_file("index.html")
@@ -25,6 +23,17 @@ def requests():
 			target_date = mysql_date,
 			area_name = data['area_name']
 		)
+
+		existing_priority_count = FeatureRequest.query.filter(FeatureRequest.client_name == data['client_name']).filter(FeatureRequest.client_priority == int(data['client_priority'])).count()
+
+		# check if a request from the client already has the given priority
+		if existing_priority_count > 0:
+			# if so, get that request and any requests with lower priorities
+			requests_to_change = FeatureRequest.query.filter(FeatureRequest.client_name == data['client_name']).filter(FeatureRequest.client_priority >= int(data['client_priority']))
+			# bump each priority up by one
+			for to_change in requests_to_change:
+				to_change.client_priority += 1
+				# save 
 
 		db.session.add(featRequest)
 		db.session.commit()
