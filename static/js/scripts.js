@@ -37,11 +37,10 @@ $(document).ready(function(){
 				type: "POST",
 				data: JSON.stringify(payload),
 				contentType: "application/json; charset=utf-8",
-				dataType: "json",
-				success: function(){
-
-				}
+				dataType: "json"
 			});
+
+			this.refreshExistingFeatureRequests();
 		}
 
 		self.refreshExistingFeatureRequests = function(){
