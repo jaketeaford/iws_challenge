@@ -41,7 +41,7 @@ $(document).ready(function(){
 					};
 
 					$.ajax({
-						url: "http://localhost:5000/requests",
+						url: "/requests",
 						type: "POST",
 						data: JSON.stringify(payload),
 						contentType: "application/json; charset=utf-8",
@@ -61,7 +61,7 @@ $(document).ready(function(){
 		self.refreshExistingFeatureRequests = function(){
 			var appVM = this;
 			$.ajax({
-				url: "http://localhost:5000/requests",
+				url: "/requests",
 				type: "GET",
 				success: this.existingRequests
 			});
