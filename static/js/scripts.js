@@ -50,6 +50,13 @@ $(document).ready(function(){
 
 					this.refreshExistingFeatureRequests();
 
+					this.title(null);
+					this.description(null);
+					this.selectedClient(null);
+					this.priority(null);
+					this.date(null);
+					this.selectedArea(null);
+
 				} else {
 					alert("All fields are required.");
 				}
