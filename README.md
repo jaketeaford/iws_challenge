@@ -25,6 +25,7 @@ Implementation of the mid-level engineering test given by IWS/BrightCore.
 7. Open a python console at project root and run these two commands:
 
    `from database import db`
+   
    `db.create_all()`
 
 8. Tell Flask where the main application file is with this command:
